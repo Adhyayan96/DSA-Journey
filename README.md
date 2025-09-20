@@ -1,5 +1,5 @@
 # DSA-Journey
-This repository contains the topics that I learnt and solved problems during my DSA learning journey. Also organized solutions of all problems difficulty wise.
+This repository contains solutions of all the problems, I solved during my DSA learning journey, from Striver's A to Z sheet. And organized solutions of all the problems topics wise & also difficulty wise.
 
 ## Topics covered :
 1. 
