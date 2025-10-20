@@ -1,7 +1,9 @@
 package Easy;
 import java.util.*;;
+
 // Q = Print all possiblie pairs of all elements of an array
 // Sample input = 5 (n) & then for array = 2,3,4,5,6
+// Time complexity = O(n)
 
 public class PairsinArray {
 

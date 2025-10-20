@@ -1,6 +1,7 @@
 package Codes;
 import java.util.*;
 // Binary Search applies on Sorted Arrays
+// Time complexity = O(log n)
 
 public class BinarySearch {
 
