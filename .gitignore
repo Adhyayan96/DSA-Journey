@@ -1,0 +1,32 @@
+# Ignore compiled Java files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore build directories
+bin/
+out/
+build/
+
+# Ignore IDE and system files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Ignore temporary and log files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Allow only the following types to go to GitHub
+!*.java
+!*.txt
+!*.pdf
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif

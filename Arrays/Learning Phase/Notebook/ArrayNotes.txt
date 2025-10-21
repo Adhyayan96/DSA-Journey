@@ -1,0 +1,32 @@
+
+1. An array has always fixed size, we can't change (While on the other hand, ArrayList has no fixed size - we can add , delete, update)
+
+2. Printing the output (int datatype) as an array, ex :
+		Int a = 3;
+		Int b = 4;
+		return new int[] {a,b}; 
+        Or
+        Sout (.......);
+
+3. Linear Search :
+	TC = O(n)
+Def = Searching a key element in a given array. Here we one by one search each index’s value such that - “is this what i’m looking for ?” and then we return that index, if matched that value with the key element.
+
+4. Binary Search :
+		TC = O(log n)
+	Def = It applies on sorted arrays (like increasing or decreasing elements). 
+		
+		In BInary Search, we don’t need to do linear search to find some key element in the array. Rather we find the array where it will be in the array and then check only that area, not whole array elements.
+
+    # Solving way (Pseudocode) : taking an sample array - {2,4,6,8,10,12,14}
+
+    S1; start = 0th index and end = arr.length -1
+    S2: while(start<=end) - its going normailly 0th index to length-1 index, as it goes
+        s.s1: find mid of the array - through this formula : (start + end)/2
+        s.s2: check conditions : mid==key (found - best case scenario) or mid>key (left side) or mid<key (right side)
+
+5. If we are asked - tell no. of pairs possible in an array :
+        the formula is : (n*(n-1))/2  = here n = length of the array
+
+6. If we are asked - tell no. of subarrays(Subarrays = a continuous/contiguous part of an array) possible in an array :
+        the formula is : (n*(n+1))/2  = here n = length of the array
