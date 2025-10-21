@@ -1,4 +1,3 @@
-package Easy;
 import java.util.*;;
 
 // Q = Print all possiblie pairs of all elements of an array

@@ -1,4 +1,3 @@
-package Codes;
 import java.util.*;
 // Subarrays = a continuous part of an array
 // Q = Print all sub arrays of an array, count how many sub arrays are there, find sum of every single subarrays & the find max and minimum values of these sums of subarrays
