@@ -30,3 +30,18 @@ Def = Searching a key element in a given array. Here we one by one search each i
 
 6. If we are asked - tell no. of subarrays(Subarrays = a continuous/contiguous part of an array) possible in an array :
         the formula is : (n*(n+1))/2  = here n = length of the array
+
+7. For every datatype there are maximum and minimum value, those can be accessed by these two methods :
+        (1) like for integer values, for minimum (-infinity) : Integer.MIN_VALUE; 
+        (2) like for integer values, for maximum (+infinity) : Integer.MAX_VALUE;
+
+8. Prefix Sum :
+                Def : Prefix sum means - sum of all the array elements from first index to current index (for each index).
+                        
+                        When is Prefix Sum Needed?
+                        = You need Prefix Sum when you have to frequently calculate subarray sums or range queries.
+
+                Simple formula to calculate prefix sum : start loop from index1 (not 0) and then apply this = prefix[i-1]+arr[i] : see PrefixSum problem in Learning Phase Codes
+                        Let take an example array = {2,3,4,-4}
+                        So, now our example array will be {2,5,9,5}; here first index’s sum is 2 because there isn't any elment before 0th index, then 2nd index = 5 - because if we do sum from from first index to current index: then it comes 2+3 and that's how it comes 5 & ohters are done by exactly same way. 
+                        And to find subarray sums we use: prefix[end] - prefix[start-1]

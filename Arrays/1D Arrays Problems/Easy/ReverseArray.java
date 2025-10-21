@@ -21,7 +21,7 @@ public class ReverseArray {
         for(int i = 0; i<arr.length; i++){
             arr[i]=sc.nextInt();
         }
-        reverseArray(arr); // calling our function (Without calling this, reverse won't work)
+        reverseArray(arr);
         for(int i = 0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
         }
