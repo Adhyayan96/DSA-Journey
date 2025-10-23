@@ -1,5 +1,5 @@
 public class PrefixSum {
-    // Q = Find Maximum Subarray sum : Prefix Sum approach = O(n²) (best approach than normal subarrays approach - Subarrays code in learning phase)
+    // Q = Find Maximum Subarray sum : Prefix Sum approach = O(n²) (better approach than normal subarrays approach - Subarrays code in learning phase)
 
     public static void prefixSum(int numbers[]){
         int currSum = 0; // current sum

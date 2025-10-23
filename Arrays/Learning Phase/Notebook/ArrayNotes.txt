@@ -45,3 +45,19 @@ Def = Searching a key element in a given array. Here we one by one search each i
                         Let take an example array = {2,3,4,-4}
                         So, now our example array will be {2,5,9,5}; here first index’s sum is 2 because there isn't any elment before 0th index, then 2nd index = 5 - because if we do sum from from first index to current index: then it comes 2+3 and that's how it comes 5 & ohters are done by exactly same way. 
                         And to find subarray sums we use: prefix[end] - prefix[start-1]
+
+
+9. Kadane's Algo :
+                +ve value + +ve value = +value
+                +ve value + -ve value (smaller than +ve value) = +ve value // like = 2-1 = 1
+                +ve value + -ve value (bigger than +ve value) = -ve value // like = 1-2 = -1
+
+                Here Kaden says, if sum is -ve, then return sum = 0 instead the -ve number 
+
+                it's TC is = O(n) // see KadaneAlgo code in Learning Phase  
+
+        Explanatiion : let's take an example array = {-2,-3,4,-1,-2,1,5,-3}
+                        Now if you carefully see the maximum subarray sum comes from index 2 to 6 = so 4 + (-1) + (-2) + 1 + 5 = 7
+                        In subarray sum, we are storing each element's sum to current value and then finding MAX_VALUE // see KadaneAlgo code in Learning Phase  
+
+                        And doing sum between every array's element with previous currentsum / previous sum.         
