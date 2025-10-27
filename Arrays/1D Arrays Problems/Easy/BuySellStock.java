@@ -12,9 +12,7 @@ public class BuySellStock {
             if(prices[i]<buy){
                 buy = prices[i];
             }
-            else if(prices[i]-buy>profit){
-                profit = prices[i]-buy;
-            }
+            profit = Math.max(profit,prices[i]-buy);
         }
         return profit;
     }

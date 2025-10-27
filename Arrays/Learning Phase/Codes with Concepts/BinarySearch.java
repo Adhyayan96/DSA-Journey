@@ -9,7 +9,7 @@ public class BinarySearch {
 
         while(start<=end){ // this loop will go till we come to the last elemnt in the array (it doesn't mean the last (array.lenght -1) index element)
             // finding mid
-            int mid = (start + end)/2;
+            int mid = start+(end - start)/2;
 
             // Doing comparison
             if(numbers[mid]==key){
