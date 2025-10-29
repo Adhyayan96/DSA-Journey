@@ -5,7 +5,7 @@ import java.util.*;
                             Time complexity = O(log n)
 */
 
-public class ArraysSortFunc {
+public class ArraysSortingFunctions {
     public static void main(String[] args) {
         Integer arr[]= {5,4,1,3,2};
         
