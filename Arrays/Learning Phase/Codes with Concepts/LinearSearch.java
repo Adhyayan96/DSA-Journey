@@ -24,3 +24,17 @@ public class LinearSearch {
         }
     }
 }
+
+/*
+    Time Complexity = O(n)
+    Linear Search = Check each element one by one → stop when key is found → return index or -1
+    Process: Start from first → compare with key → move next → repeat until found or end
+
+
+    Notes on Linear Search:
+    - TC = O(n)
+    - Works on any array (sorted or unsorted)
+    - Checks each element sequentially
+    - Stops when key is found or end of array is reached
+    - Simple and easy to implement
+*/

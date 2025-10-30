@@ -1,58 +1,86 @@
 public class PrefixSum {
-    // Q = Find Maximum Subarray sum : Prefix Sum approach = O(n²) (better approach than normal subarrays approach - Subarrays code in learning phase)
+    /*
+        Q = Find Maximum Subarray Sum : Prefix Sum approach = O(n²)
+        Better than brute-force O(n³) subarray sum approach
+    */
 
     public static void prefixSum(int numbers[]){
         int currSum = 0; // current sum
         int maxSum = Integer.MIN_VALUE; // initially : -infinity
 
-        // Prefix array making & all elements calculation - Prefix sum
-        int prefix[] = new int[numbers.length]; // making an array to store prefix sum elements
-        // Though we could manipulate real array elements without making another array for storing prefix sum values, becuase space complexity will increase.
-        // But we shouldn't manipulate the original data, because in real development field that data can be used for another part too.
-        prefix[0]=numbers[0]; // first index's value will be same
+        /*
+            Prefix array stores sum of elements from index 0 to i
+            Note: We could update the original array to save space,
+            but keeping it unchanged is safer for reuse elsewhere.
+        */
+        int prefix[] = new int[numbers.length]; 
+        prefix[0] = numbers[0]; // first index’s sum is same as original
 
-        for(int i = 1; i<prefix.length; i++){
-            prefix[i]=prefix[i-1]+numbers[i]; // prefix[i] = previous index's element of prefix array or previous sum + current index's element of numbers' array
-        } // here i'm already storing all subarray sums of index 0
+        for(int i = 1; i < prefix.length; i++){
+            prefix[i] = prefix[i-1] + numbers[i]; 
+            // prefix[i] = sum from index 0 to i
+        }
 
-        for(int i = 0; i<numbers.length; i++){ // i = Start 
-            for(int k=i; k<numbers.length; k++){ // j = End 
-                /* 
-                Concept : prefix[end]-prefix[start-1] -> through this formula we can get -> "actual array's" index 'i' to index 'k-1' =
-                          this subarray's actual sum (by using this way, we are getting all possible subarray's sum of main array). But 
-                          in brute force of Subarray sum (learning phase's subarrays code) as we have seen extra anothr inner loop to 
-                          do sum, that makes that brute force O(n3) time complexity. To make it O(n²) we use this prefix sum concept 
-                          (without using the extra inner loop).
+        for(int i = 0; i < numbers.length; i++){ // start index
+            for(int k = i; k < numbers.length; k++){ // end index
+                /*
+                    Concept: Subarray sum from i to k
+                    - If i == 0: sum = prefix[k]
+                    - Else: sum = prefix[k] - prefix[i-1]
 
-                          Here index (k) of prefix array is -> end index of the actual array, for a certain subarray 
-                          & same way index (i-1) of prefix array is -> starting index of the actual array, for that subarray :
-                          so that's how this formula counts exact sum of each subarray of main array.
-
-                          Example array : {1,-2,6,-1,3} = if we wanna get this subarray's sum {-2,6,-1} = if we make a loop 
-                          that goes start index(1) to end index(3) to get the sum of the subarray then = (-2+6+(-1)) = 3. 
-                          But if we do "prefix[end] - prefix[start-1]" then in our prefix array {1,-1,5,4,7} = if we take as usual 
-                          this part ({-2,6,-1}) start from index 1 and goes till index 3, so = prefix [end value = 4] - prefix[start value = 1 
-                          and then minus 1 : so 1-1 = 0th index] = 3. 
-                          This way we are getting same sum value thrugh prefix sum.
-
-                          In the other hand, if i == 0, then we directly take prefix[k], because then starting index will be i-1 = 0-1 = -1.
-                          So our code will throw exception during running.
+                    Explanation:
+                    - prefix[k] = sum from index 0 to k
+                    - prefix[i-1] = sum from index 0 to i-1
+                    - Difference = sum from i to k
+                    - Avoids extra inner loop (O(n³) → O(n²))
+                    - Space complexity = O(n) for prefix array
+                    - Kadane's algorithm can achieve O(n) if needed
                 */
-                // See the dry run below
-                currSum = i==0? prefix[i]: prefix[k]-prefix[i-1]; // if starting index is zero, then we will get "negative value" & will got an error during running the code
-                // prefix[end] - prefix[start-1]
-                // Instead of doing sum through another nested loop, this is a shortest way (but there is kadane's algorithm, the shortest way possible) - just we need to do prefix sum, then we get same sum of all pairs and this prefix sum way reduces time complexity : O(n^3) to O(n^2)
-                maxSum = Math.max(maxSum, currSum); // maximum value will be stored in maxSum
+                currSum = i == 0 ? prefix[k] : prefix[k] - prefix[i-1]; 
+                maxSum = Math.max(maxSum, currSum); // store maximum sum
             }
         }
-        System.out.println("maximum sum is : " + maxSum);
+        System.out.println("Maximum sum is : " + maxSum);
     }
 
     public static void main(String[] args){
-        int numbers[] = {1,-1,6,-1,3};
+        int numbers[] = {1, -1, 6, -1, 3};
         prefixSum(numbers);
     }
 }
+
+/*
+    PREFIX SUM NOTES (Full Concept - Easy to Recall):
+
+    1. Definition:
+       Prefix sum at index i = sum of all elements from 0 to i
+
+    2. When to use:
+       Frequently calculating subarray sums or range queries
+
+    3. How to calculate:
+       - prefix[0] = arr[0]
+       - prefix[i] = prefix[i-1] + arr[i]  (for i >= 1)
+
+    4. Subarray sum formula:
+       - sum(i to j) = prefix[j] - prefix[i-1]  (if i > 0)
+       - sum(0 to j) = prefix[j]  (if i == 0)
+
+    5. Benefits:
+       - Reduces O(n³) brute-force → O(n²)
+       - Original array stays unchanged
+       - Avoids recalculating sums multiple times
+
+    6. Dry Run Example:
+       Array = {1, -1, 6, -1, 3}
+       Prefix = {1, 0, 6, 5, 8}
+       Maximum Subarray Sum = 8 (subarray {1, -1, 6, -1, 3})
+
+    7. Extra Notes:
+       - This approach is intermediate optimization
+       - Kadane's algorithm is O(n) and better for max subarray sum
+*/
+
 
 /*
 ----------------------------------------------

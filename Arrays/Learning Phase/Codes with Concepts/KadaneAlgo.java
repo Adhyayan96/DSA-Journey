@@ -37,3 +37,21 @@ public class KadaneAlgo {
 }
 
 // Output is : Maximum Subarray sum is : -1 // for this all negative array elements
+
+/*
+    Kadane's Algo :
+                    +ve value + +ve value = +value
+                    +ve value + -ve value (smaller than +ve value) = +ve value // like = 2-1 = 1
+                    +ve value + -ve value (bigger than +ve value) = -ve value // like = 1-2 = -1
+
+                    Here Kaden says, if sum is -ve, then return sum = 0 instead the -ve number 
+
+                    it's TC is = O(n) // see KadaneAlgo code in Learning Phase  
+
+    Explanatiion :  let's take an example array = {-2,-3,4,-1,-2,1,5,-3}
+                    Now if you carefully see the maximum subarray sum comes from index 2 to 6 = so 4 + (-1) + (-2) + 1 + 5 = 7
+                    In subarray sum, we are storing each element's sum to current value and then finding MAX_VALUE 
+                    (see KadaneAlgo code in Learning Phase)
+
+                    And doing sum between every array's element with previous currentsum / previous sum.
+*/

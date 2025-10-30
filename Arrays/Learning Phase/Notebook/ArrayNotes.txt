@@ -8,56 +8,17 @@
         Or
         Sout (.......);
 
-3. Linear Search :
-	TC = O(n)
-Def = Searching a key element in a given array. Here we one by one search each index’s value such that - “is this what i’m looking for ?” and then we return that index, if matched that value with the key element.
 
-4. Binary Search :
-		TC = O(log n)
-	Def = It applies on sorted arrays (like increasing or decreasing elements). 
-		
-		In BInary Search, we don’t need to do linear search to find some key element in the array. Rather we find the array where it will be in the array and then check only that area, not whole array elements.
-
-    # Solving way (Pseudocode) : taking an sample array - {2,4,6,8,10,12,14}
-
-    S1; start = 0th index and end = arr.length -1
-    S2: while(start<=end) - its going normailly 0th index to length-1 index, as it goes
-        s.s1: find mid of the array - through this formula : (start + end)/2
-        s.s2: check conditions : mid==key (found - best case scenario) or mid>key (left side) or mid<key (right side)
-
-5. If we are asked - tell no. of pairs possible in an array :
+3. If we are asked - tell no. of pairs possible in an array :
         the formula is : (n*(n-1))/2  = here n = length of the array
 
-6. If we are asked - tell no. of subarrays(Subarrays = a continuous/contiguous part of an array) possible in an array :
+4. If we are asked - tell no. of subarrays(Subarrays = a continuous/contiguous part of an array) possible in an array :
         the formula is : (n*(n+1))/2  = here n = length of the array
 
-7. For every datatype there are maximum and minimum value, those can be accessed by these two methods :
+5. For every datatype there are maximum and minimum value, those can be accessed by these two methods :
         (1) like for integer values, for minimum (-infinity) : Integer.MIN_VALUE; 
         (2) like for integer values, for maximum (+infinity) : Integer.MAX_VALUE;
 
-8. Prefix Sum :
-                Def : Prefix sum means - sum of all the array elements from first index to current index (for each index).
+6. Arrays to String Conversion :   Arrays.toString(arr);
+
                         
-                        When is Prefix Sum Needed?
-                        = You need Prefix Sum when you have to frequently calculate subarray sums or range queries.
-
-                Simple formula to calculate prefix sum : start loop from index1 (not 0) and then apply this = prefix[i-1]+arr[i] : see PrefixSum problem in Learning Phase Codes
-                        Let take an example array = {2,3,4,-4}
-                        So, now our example array will be {2,5,9,5}; here first index’s sum is 2 because there isn't any elment before 0th index, then 2nd index = 5 - because if we do sum from from first index to current index: then it comes 2+3 and that's how it comes 5 & ohters are done by exactly same way. 
-                        And to find subarray sums we use: prefix[end] - prefix[start-1]
-
-
-9. Kadane's Algo :
-                +ve value + +ve value = +value
-                +ve value + -ve value (smaller than +ve value) = +ve value // like = 2-1 = 1
-                +ve value + -ve value (bigger than +ve value) = -ve value // like = 1-2 = -1
-
-                Here Kaden says, if sum is -ve, then return sum = 0 instead the -ve number 
-
-                it's TC is = O(n) // see KadaneAlgo code in Learning Phase  
-
-        Explanatiion : let's take an example array = {-2,-3,4,-1,-2,1,5,-3}
-                        Now if you carefully see the maximum subarray sum comes from index 2 to 6 = so 4 + (-1) + (-2) + 1 + 5 = 7
-                        In subarray sum, we are storing each element's sum to current value and then finding MAX_VALUE // see KadaneAlgo code in Learning Phase  
-
-                        And doing sum between every array's element with previous currentsum / previous sum.         
