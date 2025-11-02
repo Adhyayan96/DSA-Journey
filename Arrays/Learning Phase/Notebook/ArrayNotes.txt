@@ -21,4 +21,8 @@
 
 6. Arrays to String Conversion :   Arrays.toString(arr);
 
+7. a. Copy of the original array : int copyarr[] = Arrays.copyOf(mainArr, mainArr.length);
+    
+   b. Comparing 2 arrays : Arrays.equals(arr2, arr1);
+
                         

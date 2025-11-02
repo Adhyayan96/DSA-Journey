@@ -1,0 +1,1 @@
+1. Sorting an ArrayList : Collections.sort(ArrayList_Name);
