@@ -1,5 +1,6 @@
 public class InsertionSort {
-    /* Insertion sort : Build sorted array from left side by inserting element into correct position by "shifting" ("swapping" happens in - selection and bubble sort)
+    /* Insertion sort : Build sorted array from left side by inserting element into correct position by "shifting" 
+       ("swapping" happens in - selection and bubble sort)
     
                         Insert current value into already sorted part
                         Moves (shifts) left side until correct spot
