@@ -1,0 +1,22 @@
+# 🔹 Compiled files
+*.exe
+*.out
+*.o
+*.class
+
+# 🔹 Build folders
+build/
+dist/
+
+# 🔹 VS Code settings (optional but recommended)
+.vscode/
+
+# 🔹 Logs
+*.log
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 Environment files (important later)
+.env
