@@ -27,7 +27,7 @@ Welcome to my DSA Journey repository 👨‍💻
 
 
 
-# ☕ Language Used
+# 🏆 Language Used
 
 - C++
 
